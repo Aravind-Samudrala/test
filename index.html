@@ -10,14 +10,20 @@
         <input type="file" name="testFile" required>
         <button type="submit">Submit</button>
     </form>
-    <script>
-          const form = document.getElementsByTagName("form")[0] ;
 
+
+   <div id="output">
+     
+   </div>
+    <script>
+          localStorage.setItem("token", "Aravind Samudrala 93ikjdkkedodd");
+          const form = document.getElementsByTagName("form")[0] ;
+          const output = document.getElementById("output") ;
+          const fileInput = form.elements["testFile"]; 
+      
           form.addEvenetListener("submit", (e) => {
             e.preventDefault();
-            try {
-              window.alert("Submitted file", form["testFile"])
-            }
+            output.innerHTML = ` token :  ${localStorage.getItem("token") , fileName : ${fileInput.files[0].name} ` ;
           })
     </script>
 </body>
